@@ -10,7 +10,7 @@ rm -rf "$DEST"
 mkdir -p "$DEST/schemas"
 cp "$ROOT/metadata.json" "$ROOT/extension.js" "$ROOT/prefs.js" \
     "$ROOT/look.js" "$ROOT/physics.js" "$ROOT/bubbleEffect.js" "$ROOT/overlay.js" \
-    "$ROOT/icon.png" "$ROOT/burst.json" "$DEST/"
+    "$ROOT/icon.png" "$ROOT/burst.js" "$DEST/"
 cp "$ROOT/schemas/"*.xml "$DEST/schemas/"
 glib-compile-schemas "$DEST/schemas"
 

@@ -5,6 +5,7 @@ import GLib from 'gi://GLib';
 import {Extension} from 'resource:///org/gnome/shell/extensions/extension.js';
 import * as Main from 'resource:///org/gnome/shell/ui/main.js';
 
+import {BURST} from './burst.js';
 import {LOOK} from './look.js';
 import {BubblesOverlay} from './overlay.js';
 
@@ -41,9 +42,6 @@ export default class BubblesExtension extends Extension {
         this._inhibitedLoading = false;
         this._inhibitedCheckedAt = 0;
 
-        this._burst = {};
-        this._loadBurstConfig();
-
         this._settingsSignal = this._settings.connect('changed',
             () => this._onSettingsChanged());
 
@@ -78,7 +76,6 @@ export default class BubblesExtension extends Extension {
 
         this._sessionProxy = null;
         this._inhibited = false;
-        this._burst = {};
         this._settings = null;
     }
 
@@ -199,7 +196,7 @@ export default class BubblesExtension extends Extension {
             this._overlay = new BubblesOverlay({
                 settings: this._settings,
                 look,
-                burst: this._burst,
+                burst: BURST,
                 onDismiss: () => this._deactivate(true),
                 onError: e => this._onOverlayError(e),
             });
@@ -212,22 +209,6 @@ export default class BubblesExtension extends Extension {
             logError(e, '[Bubbles] cannot start the screensaver');
             this._deactivate(false);
         }
-    }
-
-    _loadBurstConfig() {
-        const file = this.dir.get_child('burst.json');
-        file.load_contents_async(null, (source, res) => {
-            if (this._destroyed)
-                return;
-
-            try {
-                const [, bytes] = source.load_contents_finish(res);
-                this._burst = JSON.parse(new TextDecoder().decode(bytes));
-            } catch (e) {
-                logError(e, '[Bubbles] cannot read burst.json');
-                this._burst = {};
-            }
-        });
     }
 
     _deactivate(animate = true) {
