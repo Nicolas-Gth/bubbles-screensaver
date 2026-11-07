@@ -227,18 +227,6 @@ export default class BubblesPreferences extends ExtensionPreferences {
         resetRow.add_suffix(resetButton);
         misc.add(resetRow);
 
-        const note = new Gtk.Label({
-            label: _('The screensaver runs directly inside GNOME Shell. It does not grab ' +
-                'the keyboard or mouse: moving the mouse or pressing any key stops it. ' +
-                'If anything goes wrong, disable the extension from the Extensions app.'),
-            wrap: true,
-            xalign: 0,
-            margin_top: 6,
-            margin_bottom: 6,
-        });
-        note.add_css_class('dim-label');
-        misc.add(note);
-
         const about = new Adw.PreferencesGroup({
             title: _('About'),
         });

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Bubbles Screensaver 1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-11-07 22:15+0100\n"
+"POT-Creation-Date: 2026-11-07 23:24+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -146,20 +146,13 @@ msgid "Cancel"
 msgstr ""
 
 #: prefs.js:231
-msgid ""
-"The screensaver runs directly inside GNOME Shell. It does not grab the "
-"keyboard or mouse: moving the mouse or pressing any key stops it. If "
-"anything goes wrong, disable the extension from the Extensions app."
-msgstr ""
-
-#: prefs.js:243
 msgid "About"
 msgstr ""
 
-#: prefs.js:259
+#: prefs.js:247
 msgid "A GNOME screensaver that draws bubbles in the shell after idle."
 msgstr ""
 
-#: prefs.js:268
+#: prefs.js:256
 msgid "Author: Nicolas-Gth"
 msgstr ""

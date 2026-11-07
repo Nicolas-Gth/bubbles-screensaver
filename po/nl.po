@@ -106,9 +106,6 @@ msgstr "Alle instellingen worden teruggezet naar hun standaardwaarden."
 msgid "Cancel"
 msgstr "Annuleren"
 
-msgid "The screensaver runs directly inside GNOME Shell. It does not grab the keyboard or mouse: moving the mouse or pressing any key stops it. If anything goes wrong, disable the extension from the Extensions app."
-msgstr "De schermbeveiliging draait rechtstreeks in GNOME Shell. Hij neemt het toetsenbord en de muis niet over: de muis bewegen of een toets indrukken stopt hem. Als er iets misgaat, schakel de extensie dan uit via de app Extensies."
-
 msgid "About"
 msgstr "Over"
 

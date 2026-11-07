@@ -106,9 +106,6 @@ msgstr "Todos los ajustes se restablecerán a sus valores predeterminados."
 msgid "Cancel"
 msgstr "Cancelar"
 
-msgid "The screensaver runs directly inside GNOME Shell. It does not grab the keyboard or mouse: moving the mouse or pressing any key stops it. If anything goes wrong, disable the extension from the Extensions app."
-msgstr "El salvapantallas se ejecuta directamente dentro de GNOME Shell. No captura el teclado ni el ratón: mover el ratón o pulsar cualquier tecla lo detiene. Si algo va mal, desactiva la extensión desde la aplicación Extensiones."
-
 msgid "About"
 msgstr "Acerca de"
 

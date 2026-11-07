@@ -106,9 +106,6 @@ msgstr "Todas as definições serão repostas nos seus valores predefinidos."
 msgid "Cancel"
 msgstr "Cancelar"
 
-msgid "The screensaver runs directly inside GNOME Shell. It does not grab the keyboard or mouse: moving the mouse or pressing any key stops it. If anything goes wrong, disable the extension from the Extensions app."
-msgstr "O protetor de ecrã é executado diretamente dentro do GNOME Shell. Não captura o teclado nem o rato: mover o rato ou premir qualquer tecla pára-o. Se algo correr mal, desativa a extensão na aplicação Extensões."
-
 msgid "About"
 msgstr "Acerca"
 
