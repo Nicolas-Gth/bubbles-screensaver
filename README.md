@@ -2,11 +2,12 @@
   <img src="icon.png" width="128" alt="Bubbles icon" />
 </p>
 
-# A Gnome Bubbles Screensaver
+<h1 align="center">A Gnome Bubbles Screensaver</h1>
 
-![Bubbles screensaver](screenshots/bubble_screensaver.png)
-
-![Bubbles screensaver on a black background](screenshots/bubble_screensaver_black_background.png)
+<p align="center">
+  <img src="screenshots/bubble_screensaver.png" width="46%" alt="Bubbles screensaver" />
+  <img src="screenshots/bubble_screensaver_black_background.png" width="46%" alt="Bubbles screensaver on a black background" />
+</p>
 
 A GNOME screensaver inspired by the Windows 7 bubbles screensaver, written with GNOME's native technologies (GJS and Clutter). The extension is configurable: number of bubbles, style and color, size, speed, timing, and more.
 
