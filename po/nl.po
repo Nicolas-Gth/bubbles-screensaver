@@ -34,6 +34,12 @@ msgstr "Aantal bellen"
 msgid "Target number of bubbles on screen"
 msgstr "Streefaantal bellen op het scherm"
 
+msgid "Bubble layers"
+msgstr "Bellenlagen"
+
+msgid "Number of depth layers (the bubble count is divided between them)"
+msgstr "Aantal dieptelagen (het aantal bellen wordt erover verdeeld)"
+
 msgid "Average size"
 msgstr "Gemiddelde grootte"
 

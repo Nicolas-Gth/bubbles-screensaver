@@ -34,6 +34,12 @@ msgstr "Nombre de bulles"
 msgid "Target number of bubbles on screen"
 msgstr "Nombre cible de bulles à l’écran"
 
+msgid "Bubble layers"
+msgstr "Calques de bulles"
+
+msgid "Number of depth layers (the bubble count is divided between them)"
+msgstr "Nombre de calques de profondeur (le nombre de bulles est réparti entre eux)"
+
 msgid "Average size"
 msgstr "Taille moyenne"
 

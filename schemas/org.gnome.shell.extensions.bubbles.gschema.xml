@@ -18,9 +18,15 @@
       <description>Hex color used when the bubble style is set to custom.</description>
     </key>
     <key name="bubble-count" type="i">
-      <default>18</default>
+      <default>40</default>
       <range min="1" max="200"/>
       <summary>Number of bubbles</summary>
+    </key>
+    <key name="bubble-layers" type="i">
+      <default>1</default>
+      <range min="1" max="5"/>
+      <summary>Bubble layers</summary>
+      <description>Number of depth layers; the target bubble count is divided between them.</description>
     </key>
     <key name="bubble-size" type="d">
       <default>7.0</default>

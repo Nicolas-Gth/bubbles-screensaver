@@ -34,6 +34,12 @@ msgstr "Number of bubbles"
 msgid "Target number of bubbles on screen"
 msgstr "Target number of bubbles on screen"
 
+msgid "Bubble layers"
+msgstr "Bubble layers"
+
+msgid "Number of depth layers (the bubble count is divided between them)"
+msgstr "Number of depth layers (the bubble count is divided between them)"
+
 msgid "Average size"
 msgstr "Average size"
 

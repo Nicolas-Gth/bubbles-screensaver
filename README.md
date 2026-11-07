@@ -10,7 +10,7 @@
   <img src="screenshots/bubble_screensaver_black_background.png" width="40%" alt="Bubbles screensaver on a black background" />
 </p>
 
-A GNOME screensaver inspired by the Windows 7 bubbles screensaver, written with GNOME's native technologies (GJS and Clutter). The extension is configurable: number of bubbles, style and color, size, speed, timing, and more.
+A GNOME screensaver inspired by the Windows 7 bubbles screensaver, written with GNOME's native technologies (GJS and Clutter). The extension is configurable: number of bubbles, depth layers, style and color, size, speed, timing, and more.
 
 The screensaver stays hidden while an application holds an idle inhibitor (video playback, screen sharing, a game, …). System suspend is left to GNOME's Power settings.
 

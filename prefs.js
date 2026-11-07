@@ -149,6 +149,10 @@ export default class BubblesPreferences extends ExtensionPreferences {
         addSpin(bubbles, settings, 'bubble-count', _('Number of bubbles'),
             _('Target number of bubbles on screen'), 1, 200, 1, 0);
 
+        addSpin(bubbles, settings, 'bubble-layers', _('Bubble layers'),
+            _('Number of depth layers (the bubble count is divided between them)'),
+            1, 5, 1, 0);
+
         addSpin(bubbles, settings, 'bubble-size', _('Average size'),
             _('Average radius, as % of the smallest screen side'),
             1, 30, 0.5, 1, 1, 'double');

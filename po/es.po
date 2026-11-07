@@ -34,6 +34,12 @@ msgstr "Número de burbujas"
 msgid "Target number of bubbles on screen"
 msgstr "Número objetivo de burbujas en pantalla"
 
+msgid "Bubble layers"
+msgstr "Capas de burbujas"
+
+msgid "Number of depth layers (the bubble count is divided between them)"
+msgstr "Número de capas de profundidad (el número de burbujas se reparte entre ellas)"
+
 msgid "Average size"
 msgstr "Tamaño medio"
 

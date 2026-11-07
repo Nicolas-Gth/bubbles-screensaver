@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Bubbles Screensaver 1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-11-07 21:06+0100\n"
+"POT-Creation-Date: 2026-11-07 22:15+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -58,100 +58,108 @@ msgid "Target number of bubbles on screen"
 msgstr ""
 
 #: prefs.js:152
-msgid "Average size"
+msgid "Bubble layers"
 msgstr ""
 
 #: prefs.js:153
-msgid "Average radius, as % of the smallest screen side"
+msgid "Number of depth layers (the bubble count is divided between them)"
 msgstr ""
 
 #: prefs.js:156
-msgid "Size variation"
+msgid "Average size"
 msgstr ""
 
 #: prefs.js:157
-msgid "Random variation around the average size, in %"
+msgid "Average radius, as % of the smallest screen side"
 msgstr ""
 
 #: prefs.js:160
-msgid "Speed"
+msgid "Size variation"
 msgstr ""
 
 #: prefs.js:161
-msgid "Cruising speed, as % of the smallest side per second"
+msgid "Random variation around the average size, in %"
 msgstr ""
 
 #: prefs.js:164
-msgid "Spawn interval"
+msgid "Speed"
 msgstr ""
 
 #: prefs.js:165
-msgid "Average delay between two bubbles (smaller = more bubbles arriving)"
+msgid "Cruising speed, as % of the smallest side per second"
+msgstr ""
+
+#: prefs.js:168
+msgid "Spawn interval"
 msgstr ""
 
 #: prefs.js:169
-msgid "Timing"
+msgid "Average delay between two bubbles (smaller = more bubbles arriving)"
 msgstr ""
 
 #: prefs.js:173
-msgid "Activate after idle"
-msgstr ""
-
-#: prefs.js:174
-msgid "Delay before the screensaver starts, in minutes"
+msgid "Timing"
 msgstr ""
 
 #: prefs.js:177
-msgid "Fade to black after"
+msgid "Activate after idle"
 msgstr ""
 
 #: prefs.js:178
-msgid "Length of the transparent phase before the fade, in seconds"
+msgid "Delay before the screensaver starts, in minutes"
+msgstr ""
+
+#: prefs.js:181
+msgid "Fade to black after"
 msgstr ""
 
 #: prefs.js:182
+msgid "Length of the transparent phase before the fade, in seconds"
+msgstr ""
+
+#: prefs.js:186
 msgid "Miscellaneous"
 msgstr ""
 
-#: prefs.js:187
+#: prefs.js:191
 msgid "Launch the screensaver now"
 msgstr ""
 
-#: prefs.js:202
+#: prefs.js:206
 msgid "Reset to defaults"
 msgstr ""
 
-#: prefs.js:205 prefs.js:215
+#: prefs.js:209 prefs.js:219
 msgid "Reset"
 msgstr ""
 
-#: prefs.js:211
+#: prefs.js:215
 msgid "Reset settings?"
 msgstr ""
 
-#: prefs.js:212
+#: prefs.js:216
 msgid "All settings will be restored to their default values."
 msgstr ""
 
-#: prefs.js:214
+#: prefs.js:218
 msgid "Cancel"
 msgstr ""
 
-#: prefs.js:227
+#: prefs.js:231
 msgid ""
 "The screensaver runs directly inside GNOME Shell. It does not grab the "
 "keyboard or mouse: moving the mouse or pressing any key stops it. If "
 "anything goes wrong, disable the extension from the Extensions app."
 msgstr ""
 
-#: prefs.js:239
+#: prefs.js:243
 msgid "About"
 msgstr ""
 
-#: prefs.js:255
+#: prefs.js:259
 msgid "A GNOME screensaver that draws bubbles in the shell after idle."
 msgstr ""
 
-#: prefs.js:264
+#: prefs.js:268
 msgid "Author: Nicolas-Gth"
 msgstr ""

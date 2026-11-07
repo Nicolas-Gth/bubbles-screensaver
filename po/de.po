@@ -34,6 +34,12 @@ msgstr "Anzahl der Blasen"
 msgid "Target number of bubbles on screen"
 msgstr "Zielanzahl der Blasen auf dem Bildschirm"
 
+msgid "Bubble layers"
+msgstr "Blasenebenen"
+
+msgid "Number of depth layers (the bubble count is divided between them)"
+msgstr "Anzahl der Tiefenebenen (die Blasenzahl wird auf sie aufgeteilt)"
+
 msgid "Average size"
 msgstr "Durchschnittliche Größe"
 

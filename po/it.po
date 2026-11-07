@@ -34,6 +34,12 @@ msgstr "Numero di bolle"
 msgid "Target number of bubbles on screen"
 msgstr "Numero target di bolle sullo schermo"
 
+msgid "Bubble layers"
+msgstr "Livelli di bolle"
+
+msgid "Number of depth layers (the bubble count is divided between them)"
+msgstr "Numero di livelli di profondità (il numero di bolle è suddiviso tra essi)"
+
 msgid "Average size"
 msgstr "Dimensione media"
 

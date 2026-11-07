@@ -85,13 +85,7 @@ export class BubblesOverlay {
         this._elapsed = 0;
         this._lastFrameTime = 0;
 
-        this._physics = new Physics(this._worldWidth, this._worldHeight, worldMonitors, {
-            count: settings.get_int('bubble-count'),
-            size: settings.get_double('bubble-size') / 100.0,
-            sizeVariation: settings.get_double('bubble-size-variation') / 100.0,
-            speed: settings.get_double('bubble-speed') / 100.0,
-            spawnInterval: settings.get_double('spawn-interval'),
-        });
+        this._layers = this._createPhysicsLayers(settings, worldMonitors);
 
         this._root = new St.Widget({
             x: this._minX,
@@ -193,7 +187,7 @@ export class BubblesOverlay {
             this._dropletLayer = null;
         }
 
-        this._physics = null;
+        this._layers = null;
         this._settings = null;
         this._look = null;
     }
@@ -249,6 +243,51 @@ export class BubblesOverlay {
         }
     }
 
+    _createPhysicsLayers(settings, monitors) {
+        const layerCount = Math.min(5,
+            Math.max(1, settings.get_int('bubble-layers')));
+        const totalCount = Math.max(1, settings.get_int('bubble-count'));
+
+        // Divide the target bubble count between the layers, keeping the total
+        // stable. Layers with no bubble are skipped (e.g. 1 bubble, 5 layers).
+        const base = Math.floor(totalCount / layerCount);
+        const extra = totalCount % layerCount;
+        const counts = [];
+        for (let i = 0; i < layerCount; ++i)
+            counts.push(base + (i < extra ? 1 : 0));
+
+        const activeLayers = counts.filter(count => count > 0).length;
+        const baseSize = settings.get_double('bubble-size') / 100.0;
+        const baseSpeed = settings.get_double('bubble-speed') / 100.0;
+        const sizeVariation = settings.get_double('bubble-size-variation') / 100.0;
+        // Keep the overall arrival rate stable when the count is split.
+        const spawnInterval = settings.get_double('spawn-interval') * activeLayers;
+
+        const layers = [];
+        let activeIndex = 0;
+        for (const count of counts) {
+            if (count <= 0)
+                continue;
+
+            // 0 is the front layer, 1 the farthest one: distant bubbles are
+            // slightly smaller and slower, which gives the depth effect.
+            const depth = activeLayers > 1
+                ? 1 - activeIndex / (activeLayers - 1)
+                : 0;
+
+            layers.push(new Physics(this._worldWidth, this._worldHeight, monitors, {
+                count,
+                size: baseSize * (1 - 0.25 * depth),
+                sizeVariation,
+                speed: baseSpeed * (1 - 0.35 * depth),
+                spawnInterval,
+            }));
+            ++activeIndex;
+        }
+
+        return layers;
+    }
+
     _onFrame() {
         if (this._destroyed)
             return;
@@ -267,7 +306,8 @@ export class BubblesOverlay {
             dt = Math.min(Math.max(dt, 0), 0.1);
 
             this._elapsed += dt;
-            this._physics.update(dt);
+            for (const layer of this._layers)
+                layer.update(dt);
             this._syncBubbles();
             this._updateFade();
             this._root.queue_redraw();
@@ -278,19 +318,19 @@ export class BubblesOverlay {
     }
 
     _syncBubbles() {
-        const bubbles = this._physics.bubbles;
+        for (let layerIndex = 0; layerIndex < this._layers.length; ++layerIndex) {
+            for (const bubble of this._layers[layerIndex].bubbles) {
+                let entry = this._entries.get(bubble);
+                if (!entry) {
+                    entry = this._createBubble(bubble, layerIndex);
+                    this._entries.set(bubble, entry);
+                    this._insertOrdered(entry);
+                }
 
-        for (const bubble of bubbles) {
-            let entry = this._entries.get(bubble);
-            if (!entry) {
-                entry = this._createBubble(bubble);
-                this._entries.set(bubble, entry);
-                this._insertOrdered(entry);
+                const radius = bubble.radius;
+                entry.actor.set_position(bubble.x - radius - BUBBLE_PADDING,
+                    this._worldHeight - bubble.y - radius - BUBBLE_PADDING);
             }
-
-            const radius = bubble.radius;
-            entry.actor.set_position(bubble.x - radius - BUBBLE_PADDING,
-                this._worldHeight - bubble.y - radius - BUBBLE_PADDING);
         }
     }
 
@@ -306,7 +346,7 @@ export class BubblesOverlay {
         });
     }
 
-    _createBubble(bubble) {
+    _createBubble(bubble, layer) {
         const radius = bubble.radius;
         const size = (radius + BUBBLE_PADDING) * 2;
         const actor = new St.Widget({
@@ -329,6 +369,7 @@ export class BubblesOverlay {
             actor,
             effect,
             radius,
+            layer,
             droplets: this._createDroplets(bubble, radius),
         };
     }
@@ -336,7 +377,8 @@ export class BubblesOverlay {
     _dropletCountPerBubble() {
         const requested = Math.max(1, Math.min(MAX_DROPLETS,
             Math.round(this._burstNumber('dropletCount', 80))));
-        const bubbles = Math.max(1, this._physics.targetCount);
+        const bubbles = Math.max(1, this._layers.reduce(
+            (total, layer) => total + layer.targetCount, 0));
         const budgeted = Math.floor(DROPLET_BUDGET / bubbles);
         return Math.max(1, Math.min(requested, Math.max(8, budgeted)));
     }
@@ -472,7 +514,10 @@ export class BubblesOverlay {
     }
 
     _insertOrdered(entry) {
-        let index = this._ordered.findIndex(other => other.radius < entry.radius);
+        // Back layers first, then larger bubbles behind smaller ones.
+        let index = this._ordered.findIndex(other =>
+            other.layer > entry.layer ||
+            (other.layer === entry.layer && other.radius < entry.radius));
         if (index < 0)
             index = this._ordered.length;
         this._ordered.splice(index, 0, entry);
