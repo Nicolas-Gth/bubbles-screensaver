@@ -1,0 +1,113 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Bubbles Screensaver\n"
+"PO-Revision-Date: 2026-11-07 14:10+0100\n"
+"Last-Translator: \n"
+"Language-Team: Spanish\n"
+"Language: es\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+msgid "Bubbles"
+msgstr "Burbujas"
+
+msgid "Style"
+msgstr "Estilo"
+
+msgid "Iridescent"
+msgstr "Iridiscente"
+
+msgid "Multicolor"
+msgstr "Multicolor"
+
+msgid "Transparent"
+msgstr "Transparente"
+
+msgid "Custom color"
+msgstr "Color personalizado"
+
+msgid "Number of bubbles"
+msgstr "Número de burbujas"
+
+msgid "Target number of bubbles on screen"
+msgstr "Número objetivo de burbujas en pantalla"
+
+msgid "Average size"
+msgstr "Tamaño medio"
+
+msgid "Average radius, as % of the smallest screen side"
+msgstr "Radio medio, en % del lado más pequeño de la pantalla"
+
+msgid "Size variation"
+msgstr "Variación de tamaño"
+
+msgid "Random variation around the average size, in %"
+msgstr "Variación aleatoria alrededor del tamaño medio, en %"
+
+msgid "Speed"
+msgstr "Velocidad"
+
+msgid "Cruising speed, as % of the smallest side per second"
+msgstr "Velocidad de crucero, en % del lado más pequeño por segundo"
+
+msgid "Spawn interval"
+msgstr "Intervalo de aparición"
+
+msgid "Average delay between two bubbles (smaller = more bubbles arriving)"
+msgstr "Retardo medio entre dos burbujas (más pequeño = más burbujas apareciendo)"
+
+msgid "Timing"
+msgstr "Tiempo"
+
+msgid "Activate after idle"
+msgstr "Activar tras inactividad"
+
+msgid "Delay before the screensaver starts, in minutes"
+msgstr "Retardo antes de que se inicie el salvapantallas, en minutos"
+
+msgid "Fade to black after"
+msgstr "Fundido a negro tras"
+
+msgid "Length of the transparent phase before the fade, in seconds"
+msgstr "Duración de la fase transparente antes del fundido, en segundos"
+
+msgid "Miscellaneous"
+msgstr "Varios"
+
+msgid "Explode on exit"
+msgstr "Explosionar al salir"
+
+msgid "Burst bubbles into a droplet cloud when exiting the screensaver"
+msgstr "Hacer estallar las burbujas en una nube de gotas al salir del salvapantallas"
+
+msgid "Launch the screensaver now"
+msgstr "Iniciar el salvapantallas ahora"
+
+msgid "Reset to defaults"
+msgstr "Restablecer valores predeterminados"
+
+msgid "Reset"
+msgstr "Restablecer"
+
+msgid "Reset settings?"
+msgstr "¿Restablecer la configuración?"
+
+msgid "All settings will be restored to their default values."
+msgstr "Todos los ajustes se restablecerán a sus valores predeterminados."
+
+msgid "Cancel"
+msgstr "Cancelar"
+
+msgid "The screensaver runs directly inside GNOME Shell. It does not grab the keyboard or mouse: moving the mouse or pressing any key stops it. If anything goes wrong, disable the extension from the Extensions app."
+msgstr "El salvapantallas se ejecuta directamente dentro de GNOME Shell. No captura el teclado ni el ratón: mover el ratón o pulsar cualquier tecla lo detiene. Si algo va mal, desactiva la extensión desde la aplicación Extensiones."
+
+msgid "About"
+msgstr "Acerca de"
+
+msgid "A GNOME screensaver that draws bubbles in the shell after idle."
+msgstr "Un salvapantallas de GNOME que dibuja burbujas en el shell tras un periodo de inactividad."
+
+msgid "Author: Nicolas-Gth"
+msgstr "Autor: Nicolas-Gth"

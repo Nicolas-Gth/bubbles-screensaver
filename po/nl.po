@@ -1,0 +1,113 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Bubbles Screensaver\n"
+"PO-Revision-Date: 2026-11-07 14:10+0100\n"
+"Last-Translator: \n"
+"Language-Team: Dutch\n"
+"Language: nl\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+msgid "Bubbles"
+msgstr "Bellen"
+
+msgid "Style"
+msgstr "Stijl"
+
+msgid "Iridescent"
+msgstr "Iriserend"
+
+msgid "Multicolor"
+msgstr "Meerkleurig"
+
+msgid "Transparent"
+msgstr "Transparant"
+
+msgid "Custom color"
+msgstr "Aangepaste kleur"
+
+msgid "Number of bubbles"
+msgstr "Aantal bellen"
+
+msgid "Target number of bubbles on screen"
+msgstr "Streefaantal bellen op het scherm"
+
+msgid "Average size"
+msgstr "Gemiddelde grootte"
+
+msgid "Average radius, as % of the smallest screen side"
+msgstr "Gemiddelde straal, in % van de kortste schermzijde"
+
+msgid "Size variation"
+msgstr "Groottevariantie"
+
+msgid "Random variation around the average size, in %"
+msgstr "Willekeurige variatie rond de gemiddelde grootte, in %"
+
+msgid "Speed"
+msgstr "Snelheid"
+
+msgid "Cruising speed, as % of the smallest side per second"
+msgstr "Kruissnelheid, in % van de kortste zijde per seconde"
+
+msgid "Spawn interval"
+msgstr "Verschijningsinterval"
+
+msgid "Average delay between two bubbles (smaller = more bubbles arriving)"
+msgstr "Gemiddelde vertraging tussen twee bellen (kleiner = meer bellen die verschijnen)"
+
+msgid "Timing"
+msgstr "Timing"
+
+msgid "Activate after idle"
+msgstr "Activeren na inactiviteit"
+
+msgid "Delay before the screensaver starts, in minutes"
+msgstr "Vertraging voordat de schermbeveiliging start, in minuten"
+
+msgid "Fade to black after"
+msgstr "Vervagen naar zwart na"
+
+msgid "Length of the transparent phase before the fade, in seconds"
+msgstr "Duur van de transparante fase voor het vervagen, in seconden"
+
+msgid "Miscellaneous"
+msgstr "Overig"
+
+msgid "Explode on exit"
+msgstr "Ontploffen bij afsluiten"
+
+msgid "Burst bubbles into a droplet cloud when exiting the screensaver"
+msgstr "Laat bellen bij het verlaten van de schermbeveiliging uiteenspatten in een wolk van druppels"
+
+msgid "Launch the screensaver now"
+msgstr "Schermbeveiliging nu starten"
+
+msgid "Reset to defaults"
+msgstr "Terugzetten naar standaardwaarden"
+
+msgid "Reset"
+msgstr "Herstellen"
+
+msgid "Reset settings?"
+msgstr "Instellingen herstellen?"
+
+msgid "All settings will be restored to their default values."
+msgstr "Alle instellingen worden teruggezet naar hun standaardwaarden."
+
+msgid "Cancel"
+msgstr "Annuleren"
+
+msgid "The screensaver runs directly inside GNOME Shell. It does not grab the keyboard or mouse: moving the mouse or pressing any key stops it. If anything goes wrong, disable the extension from the Extensions app."
+msgstr "De schermbeveiliging draait rechtstreeks in GNOME Shell. Hij neemt het toetsenbord en de muis niet over: de muis bewegen of een toets indrukken stopt hem. Als er iets misgaat, schakel de extensie dan uit via de app Extensies."
+
+msgid "About"
+msgstr "Over"
+
+msgid "A GNOME screensaver that draws bubbles in the shell after idle."
+msgstr "Een GNOME-schermbeveiliging die na inactiviteit bellen in de shell tekent."
+
+msgid "Author: Nicolas-Gth"
+msgstr "Auteur: Nicolas-Gth"

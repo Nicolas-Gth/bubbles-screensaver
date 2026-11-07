@@ -8,9 +8,13 @@ import * as Main from 'resource:///org/gnome/shell/ui/main.js';
 import {LOOK} from './look.js';
 import {BubblesOverlay} from './overlay.js';
 
-const LOGIN_SERVICE = 'org.freedesktop.login1';
-const LOGIN_PATH = '/org/freedesktop/login1';
-const LOGIN_IFACE = 'org.freedesktop.login1.Manager';
+const SESSION_SERVICE = 'org.gnome.SessionManager';
+const SESSION_PATH = '/org/gnome/SessionManager';
+const SESSION_IFACE = 'org.gnome.SessionManager';
+
+// org.gnome.SessionManager inhibitor flag asking to keep the session idle.
+const INHIBIT_IDLE = 8;
+const INHIBIT_REFRESH_US = 5 * 1000 * 1000;
 
 export default class BubblesExtension extends Extension {
     enable() {
@@ -27,12 +31,17 @@ export default class BubblesExtension extends Extension {
         // is allowed to start on its own.
         this._armed = false;
         this._graceUntil = 0;
+        this._manual = false;
 
-        this._loginProxy = null;
-        this._loginSignalId = 0;
-        this._loginLoading = false;
-        this._suspendRequested = false;
-        this._suspendCooldownUntil = 0;
+        // Idle inhibitors (video playback, screen sharing, games, ...) are
+        // reported by the session manager; refresh the cached state regularly
+        // so the screensaver never covers inhibited activity. Cached on
+        // purpose: the D-Bus check must never run on the hot path.
+        this._sessionProxy = null;
+        this._sessionLoading = false;
+        this._inhibited = false;
+        this._inhibitedLoading = false;
+        this._inhibitedCheckedAt = 0;
 
         this._settingsSignal = this._settings.connect('changed',
             () => this._onSettingsChanged());
@@ -40,11 +49,12 @@ export default class BubblesExtension extends Extension {
         this._monitorsSignal = Main.layoutManager.connect('monitors-changed',
             () => this._onMonitorsChanged());
 
-        // One lightweight, in-process read every second. No D-Bus, no blocking.
+        // One lightweight, in-process read every second. The inhibitor state is
+        // refreshed asynchronously at most every INHIBIT_REFRESH_US.
         this._pollId = GLib.timeout_add_seconds(GLib.PRIORITY_DEFAULT, 1,
             () => this._tick());
 
-        this._ensureLoginProxy();
+        this._ensureSessionProxy();
     }
 
     disable() {
@@ -65,12 +75,8 @@ export default class BubblesExtension extends Extension {
 
         this._deactivate(false);
 
-        if (this._loginProxy && this._loginSignalId) {
-            this._loginProxy.disconnect(this._loginSignalId);
-            this._loginSignalId = 0;
-        }
-
-        this._loginProxy = null;
+        this._sessionProxy = null;
+        this._inhibited = false;
         this._settings = null;
     }
 
@@ -80,12 +86,12 @@ export default class BubblesExtension extends Extension {
         if (!this._settings)
             return;
 
-        this._suspendRequested = false;
-
         // "Launch the screensaver now" button in the preferences.
         if (this._settings.get_boolean('test-now')) {
             this._settings.set_boolean('test-now', false);
-            this._activate();
+            // An explicit request may run even while something inhibits idle
+            // (the user asked for it); it is dismissed by the next input.
+            this._activate(true);
         }
 
         if (this._active && this._overlay) {
@@ -138,17 +144,32 @@ export default class BubblesExtension extends Extension {
             return;
         }
 
+        this._refreshInhibited();
+
         const idle = this._idleMs();
 
-        if (idle < 1000) {
+        if (idle < 1000)
             this._armed = true;
-            this._suspendRequested = false;
-        }
 
         if (this._isLocked()) {
             if (this._active)
                 this._deactivate(false);
-        } else if (this._active) {
+            return;
+        }
+
+        // An application is asking the session to stay idle (video playback,
+        // screen sharing, a game, ...). Never draw over it, and hide the
+        // screensaver if it is already visible. Wait for real user activity
+        // before allowing it to start again.
+        if (this._inhibited) {
+            if (this._active && !this._manual) {
+                this._armed = false;
+                this._deactivate(false);
+            }
+            return;
+        }
+
+        if (this._active) {
             // Any input dismisses the screensaver. The overlay does not grab
             // input, so the compositor still resets the idle time.
             if (!this._dismissing && idle < 1000 &&
@@ -160,11 +181,9 @@ export default class BubblesExtension extends Extension {
             if (idle >= activation * 1000)
                 this._activate();
         }
-
-        this._maybeSuspend(idle);
     }
 
-    _activate() {
+    _activate(manual = false) {
         if (this._destroyed || this._active || this._isLocked())
             return;
 
@@ -184,6 +203,7 @@ export default class BubblesExtension extends Extension {
             });
             this._overlay.show();
             this._active = true;
+            this._manual = manual;
             // Ignore the activity that triggered a manual test for a moment.
             this._graceUntil = GLib.get_monotonic_time() + 3 * 1000 * 1000;
         } catch (e) {
@@ -205,6 +225,7 @@ export default class BubblesExtension extends Extension {
 
     _deactivate(animate = true) {
         this._graceUntil = 0;
+        this._manual = false;
 
         if (!this._overlay) {
             this._active = false;
@@ -244,69 +265,60 @@ export default class BubblesExtension extends Extension {
         this._deactivate(false);
     }
 
-    // ------------------------------------------------------------- suspend
+    // ------------------------------------------------------- idle inhibitors
 
-    _maybeSuspend(idle) {
-        const minutes = this._settings.get_int('suspend-delay');
-        if (minutes <= 0 || idle < minutes * 60000 || this._suspendRequested)
+    _ensureSessionProxy() {
+        if (this._sessionProxy || this._sessionLoading || this._destroyed)
             return;
 
-        if (GLib.get_monotonic_time() < this._suspendCooldownUntil)
-            return;
-
-        if (!this._loginProxy) {
-            this._ensureLoginProxy();
-            return;
-        }
-
-        this._suspendRequested = true;
-        this._suspend();
-    }
-
-    _ensureLoginProxy() {
-        if (this._loginProxy || this._loginLoading || this._destroyed)
-            return;
-
-        this._loginLoading = true;
+        this._sessionLoading = true;
         Gio.DBusProxy.new_for_bus(
-            Gio.BusType.SYSTEM, Gio.DBusProxyFlags.NONE, null,
-            LOGIN_SERVICE, LOGIN_PATH, LOGIN_IFACE, null,
+            Gio.BusType.SESSION, Gio.DBusProxyFlags.NONE, null,
+            SESSION_SERVICE, SESSION_PATH, SESSION_IFACE, null,
             (source, res) => {
-                this._loginLoading = false;
+                this._sessionLoading = false;
                 if (this._destroyed)
                     return;
 
                 try {
-                    this._loginProxy = Gio.DBusProxy.new_for_bus_finish(res);
-                    this._loginSignalId = this._loginProxy.connect('g-signal',
-                        (proxy, sender, signal, params) => {
-                            if (signal !== 'PrepareForSleep')
-                                return;
-                            const [sleeping] = params.deep_unpack();
-                            if (sleeping)
-                                this._deactivate(false);
-                        });
+                    this._sessionProxy = Gio.DBusProxy.new_for_bus_finish(res);
+                    // Check right away instead of waiting for the next period.
+                    this._inhibitedCheckedAt = 0;
                 } catch (e) {
-                    logError(e, '[Bubbles] logind unavailable');
-                    this._loginProxy = null;
+                    logError(e, '[Bubbles] session manager unavailable');
+                    this._sessionProxy = null;
                 }
             });
     }
 
-    _suspend() {
-        this._loginProxy.call(
-            'Suspend', new GLib.Variant('(b)', [false]),
+    _refreshInhibited() {
+        if (this._destroyed || this._inhibitedLoading)
+            return;
+
+        const now = GLib.get_monotonic_time();
+        if (now - this._inhibitedCheckedAt < INHIBIT_REFRESH_US)
+            return;
+        this._inhibitedCheckedAt = now;
+
+        if (!this._sessionProxy) {
+            this._ensureSessionProxy();
+            return;
+        }
+
+        this._inhibitedLoading = true;
+        this._sessionProxy.call(
+            'IsInhibited', new GLib.Variant('(u)', [INHIBIT_IDLE]),
             Gio.DBusCallFlags.NONE, -1, null,
             (proxy, res) => {
+                this._inhibitedLoading = false;
+                if (this._destroyed)
+                    return;
+
                 try {
-                    proxy.call_finish(res);
+                    const [inhibited] = proxy.call_finish(res).deep_unpack();
+                    this._inhibited = inhibited === true;
                 } catch (e) {
-                    logError(e, '[Bubbles] suspend failed');
-                    if (!this._destroyed) {
-                        this._suspendRequested = false;
-                        this._suspendCooldownUntil =
-                            GLib.get_monotonic_time() + 60 * 1000 * 1000;
-                    }
+                    logError(e, '[Bubbles] cannot check idle inhibitors');
                 }
             });
     }

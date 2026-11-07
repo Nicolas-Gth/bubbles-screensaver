@@ -243,8 +243,6 @@ export class BubblesOverlay {
             return {
                 tint,
                 iridescence: this._look.iridescence,
-                // Iridescent bubbles shift through many colors, so a single
-                // tinted cloud would look wrong: use neutral white droplets.
                 dropletTint: [1.0, 1.0, 1.0],
             };
         }
@@ -272,8 +270,6 @@ export class BubblesOverlay {
             this._physics.update(dt);
             this._syncBubbles();
             this._updateFade();
-            // Repaint the whole overlay so the previous positions of moving
-            // bubbles never leave coloured edge trails behind.
             this._root.queue_redraw();
         } catch (e) {
             if (this._onError)
@@ -366,8 +362,6 @@ export class BubblesOverlay {
 
     // Draw every active droplet that intersects this monitor. St.DrawingArea
     // clears the surface and gives us a logical-pixel Cairo context.
-    // Destroying a bubble also frees its shader framebuffer. Do it in small
-    // batches so a whole wave does not free dozens of them in the same frame.
     _processDestroyQueue() {
         let budget = DESTROY_PER_FRAME;
         while (budget-- > 0 && this._destroyQueue.length > 0)

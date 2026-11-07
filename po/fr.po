@@ -65,7 +65,7 @@ msgid "Activate after idle"
 msgstr "Activation après inactivité"
 
 msgid "Delay before the screensaver starts, in minutes"
-msgstr "Délai avant le lancement du screensaver, en minutes"
+msgstr "Délai avant le lancement de l’écran de veille, en minutes"
 
 msgid "Fade to black after"
 msgstr "Fondu au noir après"
@@ -73,23 +73,17 @@ msgstr "Fondu au noir après"
 msgid "Length of the transparent phase before the fade, in seconds"
 msgstr "Durée de la phase transparente avant le fondu, en secondes"
 
-msgid "Suspend the system after"
-msgstr "Suspend the system after"
-
-msgid "Idle time before suspend, in minutes (0 = never)"
-msgstr "Temps d’inactivité avant la mise en veille, en minutes (0 = jamais)"
-
 msgid "Miscellaneous"
 msgstr "Divers"
 
 msgid "Explode on exit"
 msgstr "Explosion à la sortie"
 
-msgid "Replace bubbles with a droplet cloud when the screensaver stops"
-msgstr "Remplacer les bulles par une nuée de gouttelettes à l’arrêt du screensaver"
+msgid "Burst bubbles into a droplet cloud when exiting the screensaver"
+msgstr "Faire éclater les bulles en une nuée de gouttelettes à la sortie de l’écran de veille"
 
 msgid "Launch the screensaver now"
-msgstr "Lancer le screensaver maintenant"
+msgstr "Lancer l’écran de veille maintenant"
 
 msgid "Reset to defaults"
 msgstr "Réinitialiser les paramètres"
@@ -107,13 +101,13 @@ msgid "Cancel"
 msgstr "Annuler"
 
 msgid "The screensaver runs directly inside GNOME Shell. It does not grab the keyboard or mouse: moving the mouse or pressing any key stops it. If anything goes wrong, disable the extension from the Extensions app."
-msgstr "Le screensaver s’affiche directement dans GNOME Shell. Il ne capture ni le clavier ni la souris : bouger la souris ou appuyer sur une touche suffit à l’arrêter. En cas de souci, désactive l’extension depuis l’application Extensions."
+msgstr "L’écran de veille s’affiche directement dans GNOME Shell. Il ne capture ni le clavier ni la souris : bouger la souris ou appuyer sur une touche suffit à l’arrêter. En cas de souci, désactive l’extension depuis l’application Extensions."
 
 msgid "About"
 msgstr "À propos"
 
-msgid "A GNOME screensaver that draws Windows-style glass bubbles directly in the shell after idle, with a transparent intro, a fade to black and an optional system suspend."
-msgstr "Un économiseur d’écran GNOME qui dessine des bulles de verre dans le style Windows directement dans le shell après une période d’inactivité, avec une introduction transparente, un fondu au noir et une mise en veille facultative du système."
+msgid "A GNOME screensaver that draws bubbles in the shell after idle."
+msgstr "Un écran de veille GNOME qui dessine des bulles dans le shell après une période d’inactivité."
 
 msgid "Author: Nicolas-Gth"
 msgstr "Auteur : Nicolas-Gth"

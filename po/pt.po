@@ -1,0 +1,113 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Bubbles Screensaver\n"
+"PO-Revision-Date: 2026-11-07 14:10+0100\n"
+"Last-Translator: \n"
+"Language-Team: Portuguese\n"
+"Language: pt\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+msgid "Bubbles"
+msgstr "Bolhas"
+
+msgid "Style"
+msgstr "Estilo"
+
+msgid "Iridescent"
+msgstr "Iridescente"
+
+msgid "Multicolor"
+msgstr "Multicolor"
+
+msgid "Transparent"
+msgstr "Transparente"
+
+msgid "Custom color"
+msgstr "Cor personalizada"
+
+msgid "Number of bubbles"
+msgstr "Número de bolhas"
+
+msgid "Target number of bubbles on screen"
+msgstr "Número pretendido de bolhas no ecrã"
+
+msgid "Average size"
+msgstr "Tamanho médio"
+
+msgid "Average radius, as % of the smallest screen side"
+msgstr "Raio médio, em % do lado mais pequeno do ecrã"
+
+msgid "Size variation"
+msgstr "Variação de tamanho"
+
+msgid "Random variation around the average size, in %"
+msgstr "Variação aleatória em torno do tamanho médio, em %"
+
+msgid "Speed"
+msgstr "Velocidade"
+
+msgid "Cruising speed, as % of the smallest side per second"
+msgstr "Velocidade de cruzeiro, em % do lado mais pequeno por segundo"
+
+msgid "Spawn interval"
+msgstr "Intervalo de aparecimento"
+
+msgid "Average delay between two bubbles (smaller = more bubbles arriving)"
+msgstr "Atraso médio entre duas bolhas (mais pequeno = mais bolhas a aparecer)"
+
+msgid "Timing"
+msgstr "Temporização"
+
+msgid "Activate after idle"
+msgstr "Ativar após inatividade"
+
+msgid "Delay before the screensaver starts, in minutes"
+msgstr "Atraso antes de o protetor de ecrã iniciar, em minutos"
+
+msgid "Fade to black after"
+msgstr "Desvanecer para preto após"
+
+msgid "Length of the transparent phase before the fade, in seconds"
+msgstr "Duração da fase transparente antes do desvanecimento, em segundos"
+
+msgid "Miscellaneous"
+msgstr "Diversos"
+
+msgid "Explode on exit"
+msgstr "Explodir ao sair"
+
+msgid "Burst bubbles into a droplet cloud when exiting the screensaver"
+msgstr "Fazer rebentar as bolhas numa nuvem de gotas ao sair do protetor de ecrã"
+
+msgid "Launch the screensaver now"
+msgstr "Iniciar o protetor de ecrã agora"
+
+msgid "Reset to defaults"
+msgstr "Restaurar predefinições"
+
+msgid "Reset"
+msgstr "Restaurar"
+
+msgid "Reset settings?"
+msgstr "Restaurar as definições?"
+
+msgid "All settings will be restored to their default values."
+msgstr "Todas as definições serão repostas nos seus valores predefinidos."
+
+msgid "Cancel"
+msgstr "Cancelar"
+
+msgid "The screensaver runs directly inside GNOME Shell. It does not grab the keyboard or mouse: moving the mouse or pressing any key stops it. If anything goes wrong, disable the extension from the Extensions app."
+msgstr "O protetor de ecrã é executado diretamente dentro do GNOME Shell. Não captura o teclado nem o rato: mover o rato ou premir qualquer tecla pára-o. Se algo correr mal, desativa a extensão na aplicação Extensões."
+
+msgid "About"
+msgstr "Acerca"
+
+msgid "A GNOME screensaver that draws bubbles in the shell after idle."
+msgstr "Um protetor de ecrã GNOME que desenha bolhas na shell após um período de inatividade."
+
+msgid "Author: Nicolas-Gth"
+msgstr "Autor: Nicolas-Gth"

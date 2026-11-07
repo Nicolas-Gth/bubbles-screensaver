@@ -1,0 +1,113 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Bubbles Screensaver\n"
+"PO-Revision-Date: 2026-11-07 14:10+0100\n"
+"Last-Translator: \n"
+"Language-Team: German\n"
+"Language: de\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+msgid "Bubbles"
+msgstr "Blasen"
+
+msgid "Style"
+msgstr "Stil"
+
+msgid "Iridescent"
+msgstr "Irisierend"
+
+msgid "Multicolor"
+msgstr "Mehrfarbig"
+
+msgid "Transparent"
+msgstr "Transparent"
+
+msgid "Custom color"
+msgstr "Benutzerdefinierte Farbe"
+
+msgid "Number of bubbles"
+msgstr "Anzahl der Blasen"
+
+msgid "Target number of bubbles on screen"
+msgstr "Zielanzahl der Blasen auf dem Bildschirm"
+
+msgid "Average size"
+msgstr "Durchschnittliche Größe"
+
+msgid "Average radius, as % of the smallest screen side"
+msgstr "Durchschnittlicher Radius, in % der kürzeren Bildschirmseite"
+
+msgid "Size variation"
+msgstr "Größenabweichung"
+
+msgid "Random variation around the average size, in %"
+msgstr "Zufällige Abweichung um die durchschnittliche Größe, in %"
+
+msgid "Speed"
+msgstr "Geschwindigkeit"
+
+msgid "Cruising speed, as % of the smallest side per second"
+msgstr "Reisegeschwindigkeit, in % der kürzeren Seite pro Sekunde"
+
+msgid "Spawn interval"
+msgstr "Erscheinungsintervall"
+
+msgid "Average delay between two bubbles (smaller = more bubbles arriving)"
+msgstr "Durchschnittliche Verzögerung zwischen zwei Blasen (kleiner = mehr Blasen erscheinen)"
+
+msgid "Timing"
+msgstr "Zeitsteuerung"
+
+msgid "Activate after idle"
+msgstr "Nach Inaktivität aktivieren"
+
+msgid "Delay before the screensaver starts, in minutes"
+msgstr "Verzögerung, bevor der Bildschirmschoner startet, in Minuten"
+
+msgid "Fade to black after"
+msgstr "Schwarzblende nach"
+
+msgid "Length of the transparent phase before the fade, in seconds"
+msgstr "Dauer der transparenten Phase vor der Blende, in Sekunden"
+
+msgid "Miscellaneous"
+msgstr "Sonstiges"
+
+msgid "Explode on exit"
+msgstr "Beim Beenden explodieren"
+
+msgid "Burst bubbles into a droplet cloud when exiting the screensaver"
+msgstr "Blasen beim Beenden des Bildschirmschoners zu einer Tröpfchenwolke zerplatzen lassen"
+
+msgid "Launch the screensaver now"
+msgstr "Bildschirmschoner jetzt starten"
+
+msgid "Reset to defaults"
+msgstr "Auf Standardwerte zurücksetzen"
+
+msgid "Reset"
+msgstr "Zurücksetzen"
+
+msgid "Reset settings?"
+msgstr "Einstellungen zurücksetzen?"
+
+msgid "All settings will be restored to their default values."
+msgstr "Alle Einstellungen werden auf ihre Standardwerte zurückgesetzt."
+
+msgid "Cancel"
+msgstr "Abbrechen"
+
+msgid "The screensaver runs directly inside GNOME Shell. It does not grab the keyboard or mouse: moving the mouse or pressing any key stops it. If anything goes wrong, disable the extension from the Extensions app."
+msgstr "Der Bildschirmschoner läuft direkt in der GNOME Shell. Er fängt weder Tastatur noch Maus ein: Mausbewegung oder eine beliebige Taste beendet ihn. Falls etwas schiefgeht, deaktiviere die Erweiterung in der App „Erweiterungen“."
+
+msgid "About"
+msgstr "Info"
+
+msgid "A GNOME screensaver that draws bubbles in the shell after idle."
+msgstr "Ein GNOME-Bildschirmschoner, der nach Inaktivität Blasen in der Shell zeichnet."
+
+msgid "Author: Nicolas-Gth"
+msgstr "Autor: Nicolas-Gth"

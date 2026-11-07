@@ -141,7 +141,7 @@ export default class BubblesPreferences extends ExtensionPreferences {
 
         const explodeSwitch = new Adw.SwitchRow({
             title: _('Explode on exit'),
-            subtitle: _('Replace bubbles with a droplet cloud when the screensaver stops'),
+            subtitle: _('Burst bubbles into a droplet cloud when exiting the screensaver'),
         });
         settings.bind('explode-on-exit', explodeSwitch, 'active', Gio.SettingsBindFlags.DEFAULT);
         bubbles.add(explodeSwitch);
@@ -177,10 +177,6 @@ export default class BubblesPreferences extends ExtensionPreferences {
         addSpin(timing, settings, 'fade-delay', _('Fade to black after'),
             _('Length of the transparent phase before the fade, in seconds'),
             0, 3600, 5, 0, 1, 'int');
-
-        addSpin(timing, settings, 'suspend-delay', _('Suspend the system after'),
-            _('Idle time before suspend, in minutes (0 = never)'),
-            0, 1440, 5, 0);
 
         const misc = new Adw.PreferencesGroup({
             title: _('Miscellaneous'),
@@ -256,9 +252,7 @@ export default class BubblesPreferences extends ExtensionPreferences {
         }
 
         const description = new Gtk.Label({
-            label: _('A GNOME screensaver that draws Windows-style glass bubbles ' +
-                'directly in the shell after idle, with a transparent intro, a fade ' +
-                'to black and an optional system suspend.'),
+            label: _('A GNOME screensaver that draws bubbles in the shell after idle.'),
             wrap: true,
             xalign: 0,
             margin_bottom: 6,

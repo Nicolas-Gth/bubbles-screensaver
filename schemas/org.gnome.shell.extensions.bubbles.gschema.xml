@@ -58,12 +58,6 @@
       <summary>Fade delay</summary>
       <description>Seconds of transparent phase before the background fades to black.</description>
     </key>
-    <key name="suspend-delay" type="i">
-      <default>30</default>
-      <range min="0" max="1440"/>
-      <summary>Suspend delay</summary>
-      <description>Idle minutes before the extension asks logind to suspend the system. 0 disables it.</description>
-    </key>
     <key name="explode-on-exit" type="b">
       <default>true</default>
       <summary>Explode bubbles on exit</summary>

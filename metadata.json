@@ -1,12 +1,12 @@
 {
   "uuid": "bubbles@Nicolas-Gth",
   "name": "Bubbles Screensaver",
-  "description": "A GNOME screensaver that draws Windows-style glass bubbles directly in the shell after idle, with a transparent intro, a fade to black and an optional system suspend.\n\nÉconomiseur d’écran GNOME qui dessine des bulles de verre dans le style de Windows directement dans le shell après une période d’inactivité, avec une introduction transparente, un fondu au noir et une mise en veille facultative du système.",
+  "description": "A GNOME screensaver that draws bubbles in the shell after idle.",
   "author": "Nicolas-Gth",
   "shell-version": [
     "51"
   ],
   "settings-schema": "org.gnome.shell.extensions.bubbles",
   "gettext-domain": "bubbles",
-  "version": 5
+  "version": 1
 }

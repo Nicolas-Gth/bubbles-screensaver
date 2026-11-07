@@ -73,20 +73,14 @@ msgstr "Fade to black after"
 msgid "Length of the transparent phase before the fade, in seconds"
 msgstr "Length of the transparent phase before the fade, in seconds"
 
-msgid "Suspend the system after"
-msgstr "Suspend the system after"
-
-msgid "Idle time before suspend, in minutes (0 = never)"
-msgstr "Idle time before suspend, in minutes (0 = never)"
-
 msgid "Miscellaneous"
 msgstr "Miscellaneous"
 
 msgid "Explode on exit"
 msgstr "Explode on exit"
 
-msgid "Replace bubbles with a droplet cloud when the screensaver stops"
-msgstr "Replace bubbles with a droplet cloud when the screensaver stops"
+msgid "Burst bubbles into a droplet cloud when exiting the screensaver"
+msgstr "Burst bubbles into a droplet cloud when exiting the screensaver"
 
 msgid "Launch the screensaver now"
 msgstr "Launch the screensaver now"
@@ -112,8 +106,8 @@ msgstr "The screensaver runs directly inside GNOME Shell. It does not grab the k
 msgid "About"
 msgstr "About"
 
-msgid "A GNOME screensaver that draws Windows-style glass bubbles directly in the shell after idle, with a transparent intro, a fade to black and an optional system suspend."
-msgstr "A GNOME screensaver that draws Windows-style glass bubbles directly in the shell after idle, with a transparent intro, a fade to black and an optional system suspend."
+msgid "A GNOME screensaver that draws bubbles in the shell after idle."
+msgstr "A GNOME screensaver that draws bubbles in the shell after idle."
 
 msgid "Author: Nicolas-Gth"
 msgstr "Author: Nicolas-Gth"
