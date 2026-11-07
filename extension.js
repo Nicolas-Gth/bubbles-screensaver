@@ -33,15 +33,16 @@ export default class BubblesExtension extends Extension {
         this._graceUntil = 0;
         this._manual = false;
 
-        // Idle inhibitors (video playback, screen sharing, games, ...) are
-        // reported by the session manager; refresh the cached state regularly
-        // so the screensaver never covers inhibited activity. Cached on
-        // purpose: the D-Bus check must never run on the hot path.
+        // Idle inhibitors are reported by the session manager; refresh the cached state regularly
+        // so the screensaver never covers inhibited activity.
         this._sessionProxy = null;
         this._sessionLoading = false;
         this._inhibited = false;
         this._inhibitedLoading = false;
         this._inhibitedCheckedAt = 0;
+
+        this._burst = {};
+        this._loadBurstConfig();
 
         this._settingsSignal = this._settings.connect('changed',
             () => this._onSettingsChanged());
@@ -77,6 +78,7 @@ export default class BubblesExtension extends Extension {
 
         this._sessionProxy = null;
         this._inhibited = false;
+        this._burst = {};
         this._settings = null;
     }
 
@@ -197,7 +199,7 @@ export default class BubblesExtension extends Extension {
             this._overlay = new BubblesOverlay({
                 settings: this._settings,
                 look,
-                burst: this._readBurstConfig(),
+                burst: this._burst,
                 onDismiss: () => this._deactivate(true),
                 onError: e => this._onOverlayError(e),
             });
@@ -212,15 +214,20 @@ export default class BubblesExtension extends Extension {
         }
     }
 
-    _readBurstConfig() {
-        try {
-            const path = this.dir.get_child('burst.json').get_path();
-            const [, bytes] = GLib.file_get_contents(path);
-            return JSON.parse(new TextDecoder().decode(bytes));
-        } catch (e) {
-            logError(e, '[Bubbles] cannot read burst.json');
-            return {};
-        }
+    _loadBurstConfig() {
+        const file = this.dir.get_child('burst.json');
+        file.load_contents_async(null, (source, res) => {
+            if (this._destroyed)
+                return;
+
+            try {
+                const [, bytes] = source.load_contents_finish(res);
+                this._burst = JSON.parse(new TextDecoder().decode(bytes));
+            } catch (e) {
+                logError(e, '[Bubbles] cannot read burst.json');
+                this._burst = {};
+            }
+        });
     }
 
     _deactivate(animate = true) {

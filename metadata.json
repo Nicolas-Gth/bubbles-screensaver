@@ -8,5 +8,5 @@
   ],
   "settings-schema": "org.gnome.shell.extensions.bubbles",
   "gettext-domain": "bubbles",
-  "version": 1
+  "url": "https://github.com/Nicolas-Gth/bubbles-screensaver"
 }
