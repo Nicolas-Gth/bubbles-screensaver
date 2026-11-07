@@ -6,7 +6,7 @@
 
 <p align="center">
   <img src="screenshots/bubble_screensaver.png" width="40%" alt="Bubbles screensaver" />
-  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  &nbsp;
   <img src="screenshots/bubble_screensaver_black_background.png" width="40%" alt="Bubbles screensaver on a black background" />
 </p>
 
@@ -23,5 +23,3 @@ Log out and back in once, then enable **Bubbles Screensaver** in the Extensions 
 ## License
 
 GPL-3.0-or-later. See [LICENSE](LICENSE).
-
-Portions of this project are derived from the MIT-licensed Windows Bubbles project; see [NOTICE](NOTICE).
