@@ -17,3 +17,9 @@ A GNOME screensaver inspired by the Windows 7 bubbles screensaver, written with 
 ```
 
 Log out and back in once, then enable **Bubbles Screensaver** in the Extensions app and open its preferences. Requires GNOME Shell 51.
+
+## License
+
+GPL-3.0-or-later. See [LICENSE](LICENSE).
+
+Portions of this project are derived from the MIT-licensed Windows Bubbles project; see [NOTICE](NOTICE).
