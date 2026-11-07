@@ -1,0 +1,19 @@
+<p align="center">
+  <img src="icon.png" width="128" alt="Bubbles icon" />
+</p>
+
+# A Gnome Bubbles Screensaver
+
+![Bubbles screensaver](screenshots/bubble_screensaver.png)
+
+![Bubbles screensaver on a black background](screenshots/bubble_screensaver_black_background.png)
+
+A GNOME screensaver inspired by the Windows 7 bubbles screensaver, written with GNOME's native technologies (GJS and Clutter). The extension is configurable: number of bubbles, style and color, size, speed, timing, and more.
+
+## Installation
+
+```bash
+./install.sh
+```
+
+Log out and back in once, then enable **Bubbles Screensaver** in the Extensions app and open its preferences. Requires GNOME Shell 51.

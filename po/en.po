@@ -1,0 +1,119 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Bubbles Screensaver\n"
+"PO-Revision-Date: 2026-11-07 14:10+0100\n"
+"Last-Translator: \n"
+"Language-Team: English\n"
+"Language: en\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+msgid "Bubbles"
+msgstr "Bubbles"
+
+msgid "Style"
+msgstr "Style"
+
+msgid "Iridescent"
+msgstr "Iridescent"
+
+msgid "Multicolor"
+msgstr "Multicolor"
+
+msgid "Transparent"
+msgstr "Transparent"
+
+msgid "Custom color"
+msgstr "Custom color"
+
+msgid "Number of bubbles"
+msgstr "Number of bubbles"
+
+msgid "Target number of bubbles on screen"
+msgstr "Target number of bubbles on screen"
+
+msgid "Average size"
+msgstr "Average size"
+
+msgid "Average radius, as % of the smallest screen side"
+msgstr "Average radius, as % of the smallest screen side"
+
+msgid "Size variation"
+msgstr "Size variation"
+
+msgid "Random variation around the average size, in %"
+msgstr "Random variation around the average size, in %"
+
+msgid "Speed"
+msgstr "Speed"
+
+msgid "Cruising speed, as % of the smallest side per second"
+msgstr "Cruising speed, as % of the smallest side per second"
+
+msgid "Spawn interval"
+msgstr "Spawn interval"
+
+msgid "Average delay between two bubbles (smaller = more bubbles arriving)"
+msgstr "Average delay between two bubbles (smaller = more bubbles arriving)"
+
+msgid "Timing"
+msgstr "Timing"
+
+msgid "Activate after idle"
+msgstr "Activate after idle"
+
+msgid "Delay before the screensaver starts, in minutes"
+msgstr "Delay before the screensaver starts, in minutes"
+
+msgid "Fade to black after"
+msgstr "Fade to black after"
+
+msgid "Length of the transparent phase before the fade, in seconds"
+msgstr "Length of the transparent phase before the fade, in seconds"
+
+msgid "Suspend the system after"
+msgstr "Suspend the system after"
+
+msgid "Idle time before suspend, in minutes (0 = never)"
+msgstr "Idle time before suspend, in minutes (0 = never)"
+
+msgid "Miscellaneous"
+msgstr "Miscellaneous"
+
+msgid "Explode on exit"
+msgstr "Explode on exit"
+
+msgid "Replace bubbles with a droplet cloud when the screensaver stops"
+msgstr "Replace bubbles with a droplet cloud when the screensaver stops"
+
+msgid "Launch the screensaver now"
+msgstr "Launch the screensaver now"
+
+msgid "Reset to defaults"
+msgstr "Reset to defaults"
+
+msgid "Reset"
+msgstr "Reset"
+
+msgid "Reset settings?"
+msgstr "Reset settings?"
+
+msgid "All settings will be restored to their default values."
+msgstr "All settings will be restored to their default values."
+
+msgid "Cancel"
+msgstr "Cancel"
+
+msgid "The screensaver runs directly inside GNOME Shell. It does not grab the keyboard or mouse: moving the mouse or pressing any key stops it. If anything goes wrong, disable the extension from the Extensions app."
+msgstr "The screensaver runs directly inside GNOME Shell. It does not grab the keyboard or mouse: moving the mouse or pressing any key stops it. If anything goes wrong, disable the extension from the Extensions app."
+
+msgid "About"
+msgstr "About"
+
+msgid "A GNOME screensaver that draws Windows-style glass bubbles directly in the shell after idle, with a transparent intro, a fade to black and an optional system suspend."
+msgstr "A GNOME screensaver that draws Windows-style glass bubbles directly in the shell after idle, with a transparent intro, a fade to black and an optional system suspend."
+
+msgid "Author: Nicolas-Gth"
+msgstr "Author: Nicolas-Gth"

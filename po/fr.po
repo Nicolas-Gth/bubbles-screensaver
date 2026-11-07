@@ -1,0 +1,119 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Bubbles Screensaver\n"
+"PO-Revision-Date: 2026-11-07 14:10+0100\n"
+"Last-Translator: \n"
+"Language-Team: French\n"
+"Language: fr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+msgid "Bubbles"
+msgstr "Bulles"
+
+msgid "Style"
+msgstr "Style"
+
+msgid "Iridescent"
+msgstr "Iridescentes"
+
+msgid "Multicolor"
+msgstr "Multicolores"
+
+msgid "Transparent"
+msgstr "Transparentes"
+
+msgid "Custom color"
+msgstr "Couleur personnalisée"
+
+msgid "Number of bubbles"
+msgstr "Nombre de bulles"
+
+msgid "Target number of bubbles on screen"
+msgstr "Nombre cible de bulles à l’écran"
+
+msgid "Average size"
+msgstr "Taille moyenne"
+
+msgid "Average radius, as % of the smallest screen side"
+msgstr "Rayon moyen, en % du plus petit côté de l’écran"
+
+msgid "Size variation"
+msgstr "Variation de taille"
+
+msgid "Random variation around the average size, in %"
+msgstr "Variation aléatoire autour de la taille moyenne, en %"
+
+msgid "Speed"
+msgstr "Vitesse"
+
+msgid "Cruising speed, as % of the smallest side per second"
+msgstr "Vitesse de croisière, en % du plus petit côté par seconde"
+
+msgid "Spawn interval"
+msgstr "Intervalle d’apparition"
+
+msgid "Average delay between two bubbles (smaller = more bubbles arriving)"
+msgstr "Délai moyen entre deux bulles (plus petit = plus de bulles qui arrivent)"
+
+msgid "Timing"
+msgstr "Minutage"
+
+msgid "Activate after idle"
+msgstr "Activation après inactivité"
+
+msgid "Delay before the screensaver starts, in minutes"
+msgstr "Délai avant le lancement du screensaver, en minutes"
+
+msgid "Fade to black after"
+msgstr "Fondu au noir après"
+
+msgid "Length of the transparent phase before the fade, in seconds"
+msgstr "Durée de la phase transparente avant le fondu, en secondes"
+
+msgid "Suspend the system after"
+msgstr "Suspend the system after"
+
+msgid "Idle time before suspend, in minutes (0 = never)"
+msgstr "Temps d’inactivité avant la mise en veille, en minutes (0 = jamais)"
+
+msgid "Miscellaneous"
+msgstr "Divers"
+
+msgid "Explode on exit"
+msgstr "Explosion à la sortie"
+
+msgid "Replace bubbles with a droplet cloud when the screensaver stops"
+msgstr "Remplacer les bulles par une nuée de gouttelettes à l’arrêt du screensaver"
+
+msgid "Launch the screensaver now"
+msgstr "Lancer le screensaver maintenant"
+
+msgid "Reset to defaults"
+msgstr "Réinitialiser les paramètres"
+
+msgid "Reset"
+msgstr "Réinitialiser"
+
+msgid "Reset settings?"
+msgstr "Réinitialiser les paramètres ?"
+
+msgid "All settings will be restored to their default values."
+msgstr "Tous les paramètres seront rétablis à leurs valeurs par défaut."
+
+msgid "Cancel"
+msgstr "Annuler"
+
+msgid "The screensaver runs directly inside GNOME Shell. It does not grab the keyboard or mouse: moving the mouse or pressing any key stops it. If anything goes wrong, disable the extension from the Extensions app."
+msgstr "Le screensaver s’affiche directement dans GNOME Shell. Il ne capture ni le clavier ni la souris : bouger la souris ou appuyer sur une touche suffit à l’arrêter. En cas de souci, désactive l’extension depuis l’application Extensions."
+
+msgid "About"
+msgstr "À propos"
+
+msgid "A GNOME screensaver that draws Windows-style glass bubbles directly in the shell after idle, with a transparent intro, a fade to black and an optional system suspend."
+msgstr "Un économiseur d’écran GNOME qui dessine des bulles de verre dans le style Windows directement dans le shell après une période d’inactivité, avec une introduction transparente, un fondu au noir et une mise en veille facultative du système."
+
+msgid "Author: Nicolas-Gth"
+msgstr "Auteur : Nicolas-Gth"

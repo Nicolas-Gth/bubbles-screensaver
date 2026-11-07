@@ -1,0 +1,8 @@
+# Build output
+dist/
+locale/
+*.mo
+*.zip
+
+# Compiled GSettings schema
+schemas/gschemas.compiled

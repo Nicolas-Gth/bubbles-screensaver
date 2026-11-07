@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schemalist>
+  <schema id="org.gnome.shell.extensions.bubbles" path="/org/gnome/shell/extensions/bubbles/">
+    <key name="style" type="s">
+      <default>'iridescent'</default>
+      <choices>
+        <choice value="iridescent"/>
+        <choice value="multicolor"/>
+        <choice value="transparent"/>
+        <choice value="custom"/>
+      </choices>
+      <summary>Bubble style</summary>
+      <description>Bubble tint style: iridescent, multicolor, transparent or custom.</description>
+    </key>
+    <key name="custom-color" type="s">
+      <default>'#7fb8e6'</default>
+      <summary>Custom bubble color</summary>
+      <description>Hex color used when the bubble style is set to custom.</description>
+    </key>
+    <key name="bubble-count" type="i">
+      <default>18</default>
+      <range min="1" max="200"/>
+      <summary>Number of bubbles</summary>
+    </key>
+    <key name="bubble-size" type="d">
+      <default>7.0</default>
+      <range min="1.0" max="30.0"/>
+      <summary>Average bubble size</summary>
+      <description>Average bubble radius as a percentage of the smallest screen dimension.</description>
+    </key>
+    <key name="bubble-size-variation" type="d">
+      <default>40.0</default>
+      <range min="0.0" max="100.0"/>
+      <summary>Bubble size variation</summary>
+      <description>Random variation around the average size, in percent.</description>
+    </key>
+    <key name="bubble-speed" type="d">
+      <default>3.0</default>
+      <range min="0.2" max="20.0"/>
+      <summary>Bubble speed</summary>
+      <description>Cruising speed as a percentage of the smallest screen dimension per second.</description>
+    </key>
+    <key name="spawn-interval" type="d">
+      <default>0.75</default>
+      <range min="0.05" max="5.0"/>
+      <summary>Spawn interval</summary>
+      <description>Average delay between two bubbles entering, in seconds.</description>
+    </key>
+    <key name="activation-delay" type="i">
+      <default>300</default>
+      <range min="10" max="86400"/>
+      <summary>Activation delay</summary>
+      <description>Idle time before the screensaver starts, in seconds.</description>
+    </key>
+    <key name="fade-delay" type="i">
+      <default>30</default>
+      <range min="0" max="3600"/>
+      <summary>Fade delay</summary>
+      <description>Seconds of transparent phase before the background fades to black.</description>
+    </key>
+    <key name="suspend-delay" type="i">
+      <default>30</default>
+      <range min="0" max="1440"/>
+      <summary>Suspend delay</summary>
+      <description>Idle minutes before the extension asks logind to suspend the system. 0 disables it.</description>
+    </key>
+    <key name="explode-on-exit" type="b">
+      <default>true</default>
+      <summary>Explode bubbles on exit</summary>
+      <description>Replace the bubbles with a droplet cloud when the screensaver is dismissed.</description>
+    </key>
+    <key name="test-now" type="b">
+      <default>false</default>
+      <summary>Launch now</summary>
+      <description>Set by the preferences button to launch the screensaver immediately.</description>
+    </key>
+  </schema>
+</schemalist>
